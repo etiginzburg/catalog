@@ -5,11 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Primary Meta Tags -->
     <title>אתי גינזבורג | כל הקטלוגים</title>
     <meta name="description" content="כל קולקציות השמלות של אתי גינזבורג במקום אחד - צפייה, הורדה, וקבלת הקטלוגים לווצאפ, למייל או לדרייב.">
 
-    <!-- Open Graph / WhatsApp Preview (No Image Tag Included Purposely) -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="אתי גינזבורג | כל הקטלוגים">
     <meta property="og:description" content="כל קולקציות השמלות של אתי גינזבורג במקום אחד - צפייה, הורדה, וקבלת הקטלוגים לווצאפ, למייל או לדרייב.">
@@ -92,15 +90,19 @@
             margin-top: 10px;
         }
 
+        /* Catalogs Grid using Flexbox for perfect centering */
         .catalogs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 30px;
             width: 100%;
-            margin-bottom: 60px;
+            margin-bottom: 50px;
         }
 
         .catalog-card {
+            flex: 1 1 260px;
+            max-width: 300px;
             background: var(--color-surface);
             backdrop-filter: blur(12px);
             border-radius: 20px;
@@ -132,6 +134,45 @@
             margin-bottom: 8px;
         }
 
+        /* Studio Invite Section */
+        .studio-invite {
+            text-align: center;
+            margin-bottom: 70px;
+            animation: fadeInUp 1s backwards;
+            animation-delay: 0.2s;
+        }
+
+        .studio-text {
+            font-size: 1.5rem;
+            color: var(--color-primary);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .btn-booking-main {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 15px 35px;
+            background-color: var(--color-primary);
+            color: var(--color-bg);
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: var(--transition);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .btn-booking-main:hover {
+            background-color: var(--color-secondary);
+            color: #fff;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        /* Alternatives Section */
         .alternatives-section {
             width: 100%;
             text-align: center;
@@ -242,34 +283,6 @@
             font-size: 1.4rem;
         }
 
-        /* Footer meeting button */
-        .footer-booking-wrapper {
-            margin-top: 35px;
-            margin-bottom: 10px;
-        }
-
-        .footer-btn-booking {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 30px;
-            background-color: transparent;
-            color: var(--color-accent);
-            border: 1px solid var(--color-accent);
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: var(--transition);
-        }
-
-        .footer-btn-booking:hover {
-            background-color: var(--color-accent);
-            color: var(--color-primary);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 15px rgba(216, 162, 115, 0.2);
-        }
-
         @keyframes fadeInDown {
             from {
                 opacity: 0;
@@ -315,9 +328,8 @@
                 width: 100%;
             }
 
-            .footer-btn-booking {
+            .btn-booking-main {
                 width: 100%;
-                justify-content: center;
             }
         }
     </style>
@@ -344,6 +356,13 @@
                 <a href="./קטלוג 23 אתי גינזבורג.pdf" target="_blank" class="catalog-card">
                     <i class="fa-solid fa-star card-icon"></i>
                     <h3 class="card-title">קולקציה 23</h3>
+                </a>
+            </div>
+
+            <div class="studio-invite">
+                <p class="studio-text">כל השמלות שכאן, ועוד רבות נוספות, מחכות לכן בסטודיו</p>
+                <a href="https://etiginzburg-meeting.pages.dev" target="_blank" class="btn-booking-main">
+                    <i class="fa-regular fa-calendar-check"></i> לקביעת פגישה בסטודיו
                 </a>
             </div>
 
@@ -388,12 +407,6 @@
                 <div class="contact-item address-item">
                     <i class="fa-solid fa-location-dot"></i> רב עמרם 18, קומה 2, בית שמש (הגעה בתיאום מראש)
                 </div>
-            </div>
-
-            <div class="footer-booking-wrapper">
-                <a href="https://etiginzburg-meeting.pages.dev" target="_blank" class="footer-btn-booking">
-                    <i class="fa-regular fa-calendar-check"></i> לקביעת פגישה בסטודיו
-                </a>
             </div>
 
             <p
